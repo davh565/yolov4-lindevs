@@ -15,6 +15,8 @@ out = cv2.VideoWriter('./output/output.mp4', codec, fps, (width, height))
 with open('obj.names', 'r') as f:
     classes = f.read().splitlines()
 net = cv2.dnn.readNetFromDarknet('obj.cfg', 'obj.weights')
+net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
 model = cv2.dnn_DetectionModel(net)
 model.setInputParams(scale=1 / 255, size=(416, 416), swapRB=True)
 
