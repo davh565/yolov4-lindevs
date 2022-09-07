@@ -4,7 +4,7 @@ import time
 from PIL import Image
 
 # frame = cv2.imread('./input/4.png')
-vid = cv2.VideoCapture('./input/license_plate.mp4')
+vid = cv2.VideoCapture('./video/license_plate.mp4')
 width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = int(vid.get(cv2.CAP_PROP_FPS))
